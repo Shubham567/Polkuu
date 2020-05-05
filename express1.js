@@ -24,7 +24,7 @@ app.get("/", function(request, response) {
 });
 
 app.get("/favicon.ico",(req,res) => {
-    res.sendFile("favicon.ico");
+    res.sendFile("public/favicon.ico", {root: __dirname});
 })
 
 app.get("/new-entry", function(request, response) {
