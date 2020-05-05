@@ -4,6 +4,7 @@ var bodyParser  = require("body-parser");
 var logger = require("morgan");
 
 var app = express();
+app.set('views', path.join(__dirname, './Views'));
 app.set("port", process.env.PORT || 3000);
 
 var entries = [];
@@ -42,7 +43,6 @@ app.post("/new-entry", function(request, response) {
 app.use(function(request, response) {
     response.status(404).render("404");
 });
-console.log("Reached Here");
 
 app.listen(app.get("port"), function() {
     console.log("App started on port " + app.get("port"));
