@@ -19,6 +19,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.set("views", path.resolve(__dirname, "views"));
 app.set("view engine", "ejs");
 
+app.use(express.static(path.resolve(__dirname,"public")));
+
 app.get("/", function(request, response) {
     response.render("index");
 });
@@ -26,10 +28,6 @@ app.get("/", function(request, response) {
 app.get("/about", (req,res) => {
     res.end("There is nothing to be in about");
 });
-
-app.get("/favicon.ico",(req,res) => {
-    res.sendFile("public/favicon.ico", {root: __dirname});
-})
 
 app.get("/new-entry", function(request, response) {
     response.render("new-entry");
