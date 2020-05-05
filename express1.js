@@ -23,6 +23,10 @@ app.get("/", function(request, response) {
     response.render("index");
 });
 
+app.get("/favicon.ico",(req,res) => {
+    res.sendFile("favicon.ico");
+})
+
 app.get("/new-entry", function(request, response) {
     response.render("new-entry");
 });
