@@ -4,7 +4,7 @@ var bodyParser  = require("body-parser");
 var logger = require("morgan");
 
 var app = express();
-app.set('views', path.join(__dirname, './Views'));
+
 app.set("port", process.env.PORT || 3000);
 
 var entries = [];
