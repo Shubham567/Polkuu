@@ -23,6 +23,10 @@ app.get("/", function(request, response) {
     response.render("index");
 });
 
+app.get("/about", (req,res) => {
+    res.end("There is nothing to be in about");
+});
+
 app.get("/favicon.ico",(req,res) => {
     res.sendFile("public/favicon.ico", {root: __dirname});
 })
